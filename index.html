@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FORGEFIT — Your Personal Gym Coach</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@300;400;500;600;700&family=Barlow+Condensed:wght@400;600;700;800&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- HERO SECTION -->
+  <section id="hero">
+    <div class="hero-bg">
+      <div class="hero-grid"></div>
+      <div class="hero-glow"></div>
+    </div>
+    <nav>
+      <div class="logo">FORGE<span>FIT</span></div>
+      <div class="nav-badge">Free Program Builder</div>
+    </nav>
+    <div class="hero-content">
+      <div class="hero-tag">💪 Built For Every Body</div>
+      <h1>BUILD THE<br/><span class="highlight">BODY</span><br/>YOU WANT</h1>
+      <p class="hero-sub">Answer a few questions. Get your personalized gym program, movement guides, and workout plan — all in seconds.</p>
+      <button class="cta-btn" onclick="startAssessment()">
+        <span>START MY PROGRAM</span>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </button>
+      <div class="hero-stats">
+        <div class="stat"><strong>3</strong><span>Minutes</span></div>
+        <div class="stat-div"></div>
+        <div class="stat"><strong>100%</strong><span>Personalized</span></div>
+        <div class="stat-div"></div>
+        <div class="stat"><strong>Free</strong><span>Always</span></div>
+      </div>
+    </div>
+    <div class="scroll-hint">
+      <span>Scroll to explore</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ASSESSMENT SECTION -->
+  <section id="assessment" class="hidden">
+    <div class="assessment-container">
+      <div class="progress-bar-wrapper">
+        <div class="progress-bar" id="progressBar"></div>
+        <span class="progress-label" id="progressLabel">Step 1 of 5</span>
+      </div>
+
+      <!-- STEP 1: Age -->
+      <div class="step active" id="step1">
+        <div class="step-icon">🎂</div>
+        <h2>How old are you?</h2>
+        <p>We'll tailor the program intensity to your age group</p>
+        <div class="age-grid">
+          <button class="age-btn" data-age="teen" onclick="selectAge(this, 'teen')">
+            <span class="age-range">13–17</span>
+            <span class="age-label">Teen</span>
+          </button>
+          <button class="age-btn" data-age="young" onclick="selectAge(this, 'young')">
+            <span class="age-range">18–25</span>
+            <span class="age-label">Young Adult</span>
+          </button>
+          <button class="age-btn" data-age="adult" onclick="selectAge(this, 'adult')">
+            <span class="age-range">26–39</span>
+            <span class="age-label">Adult</span>
+          </button>
+          <button class="age-btn" data-age="midlife" onclick="selectAge(this, 'midlife')">
+            <span class="age-range">40–54</span>
+            <span class="age-label">Mid-Life</span>
+          </button>
+          <button class="age-btn" data-age="senior" onclick="selectAge(this, 'senior')">
+            <span class="age-range">55+</span>
+            <span class="age-label">Senior</span>
+          </button>
+        </div>
+        <button class="next-btn" onclick="nextStep(2)" id="nextBtn1" disabled>Next →</button>
+      </div>
+
+      <!-- STEP 2: Body Type -->
+      <div class="step" id="step2">
+        <div class="step-icon">💪</div>
+        <h2>What's your body type?</h2>
+        <p>Choose the one that most closely resembles your natural physique</p>
+        <div class="body-type-grid">
+          <button class="body-btn" onclick="selectBody(this,'ectomorph')">
+            <div class="body-visual ecto">
+              <svg viewBox="0 0 60 120" class="body-svg"><ellipse cx="30" cy="18" rx="12" ry="13" fill="currentColor"/><rect x="20" y="32" width="20" height="48" rx="6" fill="currentColor"/><rect x="10" y="34" width="10" height="38" rx="5" fill="currentColor"/><rect x="40" y="34" width="10" height="38" rx="5" fill="currentColor"/><rect x="21" y="80" width="9" height="38" rx="5" fill="currentColor"/><rect x="30" y="80" width="9" height="38" rx="5" fill="currentColor"/></svg>
+            </div>
+            <h3>Ectomorph</h3>
+            <p>Slim, lean, hard to gain weight</p>
+          </button>
+          <button class="body-btn" onclick="selectBody(this,'mesomorph')">
+            <div class="body-visual meso">
+              <svg viewBox="0 0 60 120" class="body-svg"><ellipse cx="30" cy="18" rx="13" ry="13" fill="currentColor"/><rect x="16" y="32" width="28" height="48" rx="7" fill="currentColor"/><rect x="6" y="34" width="12" height="40" rx="6" fill="currentColor"/><rect x="42" y="34" width="12" height="40" rx="6" fill="currentColor"/><rect x="18" y="80" width="11" height="38" rx="5" fill="currentColor"/><rect x="31" y="80" width="11" height="38" rx="5" fill="currentColor"/></svg>
+            </div>
+            <h3>Mesomorph</h3>
+            <p>Athletic, muscular build naturally</p>
+          </button>
+          <button class="body-btn" onclick="selectBody(this,'endomorph')">
+            <div class="body-visual endo">
+              <svg viewBox="0 0 60 120" class="body-svg"><ellipse cx="30" cy="18" rx="14" ry="14" fill="currentColor"/><ellipse cx="30" cy="58" rx="20" ry="24" fill="currentColor"/><rect x="8" y="36" width="12" height="40" rx="6" fill="currentColor"/><rect x="40" y="36" width="12" height="40" rx="6" fill="currentColor"/><rect x="17" y="80" width="12" height="38" rx="6" fill="currentColor"/><rect x="31" y="80" width="12" height="38" rx="6" fill="currentColor"/></svg>
+            </div>
+            <h3>Endomorph</h3>
+            <p>Rounder, gains weight easily</p>
+          </button>
+        </div>
+        <button class="next-btn" onclick="nextStep(3)" id="nextBtn2" disabled>Next →</button>
+      </div>
+
+      <!-- STEP 3: Goal -->
+      <div class="step" id="step3">
+        <div class="step-icon">🎯</div>
+        <h2>What's your main goal?</h2>
+        <p>Pick the ONE goal that matters most to you right now</p>
+        <div class="goal-grid">
+          <button class="goal-btn" onclick="selectGoal(this,'lose_fat')">
+            <span class="goal-emoji">🔥</span>
+            <span class="goal-name">Lose Fat</span>
+            <span class="goal-desc">Burn calories, slim down</span>
+          </button>
+          <button class="goal-btn" onclick="selectGoal(this,'build_muscle')">
+            <span class="goal-emoji">💪</span>
+            <span class="goal-name">Build Muscle</span>
+            <span class="goal-desc">Get bigger and stronger</span>
+          </button>
+          <button class="goal-btn" onclick="selectGoal(this,'tone')">
+            <span class="goal-emoji">✨</span>
+            <span class="goal-name">Tone Up</span>
+            <span class="goal-desc">Lean, defined physique</span>
+          </button>
+          <button class="goal-btn" onclick="selectGoal(this,'endurance')">
+            <span class="goal-emoji">🏃</span>
+            <span class="goal-name">Endurance</span>
+            <span class="goal-desc">Stamina and cardio fitness</span>
+          </button>
+          <button class="goal-btn" onclick="selectGoal(this,'strength')">
+            <span class="goal-emoji">🏋️</span>
+            <span class="goal-name">Raw Strength</span>
+            <span class="goal-desc">Lift heavy, power up</span>
+          </button>
+          <button class="goal-btn" onclick="selectGoal(this,'general')">
+            <span class="goal-emoji">⚡</span>
+            <span class="goal-name">General Fitness</span>
+            <span class="goal-desc">Stay healthy and active</span>
+          </button>
+        </div>
+        <button class="next-btn" onclick="nextStep(4)" id="nextBtn3" disabled>Next →</button>
+      </div>
+
+      <!-- STEP 4: Experience Level -->
+      <div class="step" id="step4">
+        <div class="step-icon">🏅</div>
+        <h2>Experience level?</h2>
+        <p>Be honest — we'll make it perfect for where you are right now</p>
+        <div class="level-grid">
+          <button class="level-btn" onclick="selectLevel(this,'beginner')">
+            <div class="level-bar"><div style="width:20%"></div></div>
+            <h3>Beginner</h3>
+            <p>Little to no gym experience</p>
+          </button>
+          <button class="level-btn" onclick="selectLevel(this,'intermediate')">
+            <div class="level-bar"><div style="width:60%"></div></div>
+            <h3>Intermediate</h3>
+            <p>6 months – 2 years of training</p>
+          </button>
+          <button class="level-btn" onclick="selectLevel(this,'advanced')">
+            <div class="level-bar"><div style="width:100%"></div></div>
+            <h3>Advanced</h3>
+            <p>2+ years, consistent training</p>
+          </button>
+        </div>
+        <button class="next-btn" onclick="nextStep(5)" id="nextBtn4" disabled>Next →</button>
+      </div>
+
+      <!-- STEP 5: Days per week -->
+      <div class="step" id="step5">
+        <div class="step-icon">📅</div>
+        <h2>Days per week?</h2>
+        <p>How many days can you commit to training?</p>
+        <div class="days-grid">
+          <button class="day-btn" onclick="selectDays(this, 2)">2<span>days</span></button>
+          <button class="day-btn" onclick="selectDays(this, 3)">3<span>days</span></button>
+          <button class="day-btn" onclick="selectDays(this, 4)">4<span>days</span></button>
+          <button class="day-btn" onclick="selectDays(this, 5)">5<span>days</span></button>
+          <button class="day-btn" onclick="selectDays(this, 6)">6<span>days</span></button>
+        </div>
+        <button class="next-btn" onclick="generateProgram()" id="nextBtn5" disabled>🚀 Generate My Program</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOADING SECTION -->
+  <section id="loading" class="hidden">
+    <div class="loading-inner">
+      <div class="loading-ring">
+        <div class="ring-segment"></div>
+        <div class="ring-segment"></div>
+        <div class="ring-segment"></div>
+      </div>
+      <h2 class="loading-title">Building Your Program</h2>
+      <div class="loading-steps">
+        <div class="l-step" id="ls1">✅ Analyzing your body type...</div>
+        <div class="l-step pending" id="ls2">⏳ Matching your goals...</div>
+        <div class="l-step pending" id="ls3">⏳ Selecting exercises...</div>
+        <div class="l-step pending" id="ls4">⏳ Customizing for your age...</div>
+        <div class="l-step pending" id="ls5">⏳ Finalizing your plan...</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESULTS SECTION -->
+  <section id="results" class="hidden">
+    <div class="results-hero">
+      <div class="results-confetti" id="confetti"></div>
+      <div class="results-header">
+        <div class="profile-badge">
+          <span id="resultEmoji">💪</span>
+        </div>
+        <h1>Your Program is Ready!</h1>
+        <p id="resultSummary">Personalized just for you</p>
+      </div>
+
+      <div class="profile-cards" id="profileCards"></div>
+    </div>
+
+    <!-- WEEKLY SCHEDULE -->
+    <div class="section-block">
+      <h2 class="section-title"><span class="title-accent">📅</span> Your Weekly Schedule</h2>
+      <div class="schedule-grid" id="scheduleGrid"></div>
+    </div>
+
+    <!-- WORKOUT PROGRAM -->
+    <div class="section-block">
+      <h2 class="section-title"><span class="title-accent">🏋️</span> Your Exercise Program</h2>
+      <p class="section-sub">Tap any exercise to see detailed instructions</p>
+      <div class="workout-tabs" id="workoutTabs"></div>
+      <div class="workout-content" id="workoutContent"></div>
+    </div>
+
+    <!-- MOVEMENT GUIDES -->
+    <div class="section-block">
+      <h2 class="section-title"><span class="title-accent">📖</span> Movement Guides</h2>
+      <p class="section-sub">Step-by-step instructions for every exercise in your plan</p>
+      <div class="movement-grid" id="movementGrid"></div>
+    </div>
+
+    <!-- TIPS -->
+    <div class="section-block tips-block">
+      <h2 class="section-title"><span class="title-accent">💡</span> Pro Tips For You</h2>
+      <div class="tips-grid" id="tipsGrid"></div>
+    </div>
+
+    <!-- RESTART -->
+    <div class="restart-section">
+      <button class="restart-btn" onclick="restartAssessment()">🔄 Restart Assessment</button>
+    </div>
+  </section>
+
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
