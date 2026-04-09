@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>FORGEFIT — Your Personal Gym Coach</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="css/style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@300;400;500;600;700&family=Barlow+Condensed:wght@400;600;700;800&display=swap" rel="stylesheet" />
@@ -22,7 +22,7 @@
       <div class="nav-badge">Free Program Builder</div>
     </nav>
     <div class="hero-content">
-      <div class="hero-tag">💪 Built For Every Body</div>
+      <div class="hero-tag">🔥 AI-Powered Fitness Planner</div>
       <h1>BUILD THE<br/><span class="highlight">BODY</span><br/>YOU WANT</h1>
       <p class="hero-sub">Answer a few questions. Get your personalized gym program, movement guides, and workout plan — all in seconds.</p>
       <button class="cta-btn" onclick="startAssessment()">
@@ -89,21 +89,149 @@
         <div class="body-type-grid">
           <button class="body-btn" onclick="selectBody(this,'ectomorph')">
             <div class="body-visual ecto">
-              <svg viewBox="0 0 60 120" class="body-svg"><ellipse cx="30" cy="18" rx="12" ry="13" fill="currentColor"/><rect x="20" y="32" width="20" height="48" rx="6" fill="currentColor"/><rect x="10" y="34" width="10" height="38" rx="5" fill="currentColor"/><rect x="40" y="34" width="10" height="38" rx="5" fill="currentColor"/><rect x="21" y="80" width="9" height="38" rx="5" fill="currentColor"/><rect x="30" y="80" width="9" height="38" rx="5" fill="currentColor"/></svg>
+              <!-- ECTOMORPH: Slim, narrow shoulders, lean -->
+              <svg viewBox="0 0 100 220" class="body-svg" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <linearGradient id="ectoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" style="stop-color:#5b9cf6;stop-opacity:1"/>
+                    <stop offset="100%" style="stop-color:#2563eb;stop-opacity:1"/>
+                  </linearGradient>
+                </defs>
+                <!-- Head -->
+                <ellipse cx="50" cy="18" rx="13" ry="16" fill="url(#ectoGrad)"/>
+                <!-- Neck -->
+                <rect x="44" y="32" width="12" height="10" rx="4" fill="url(#ectoGrad)"/>
+                <!-- Shoulders - narrow -->
+                <ellipse cx="30" cy="46" rx="10" ry="7" fill="url(#ectoGrad)"/>
+                <ellipse cx="70" cy="46" rx="10" ry="7" fill="url(#ectoGrad)"/>
+                <!-- Torso - slim rectangle, narrow -->
+                <path d="M34 42 Q50 40 66 42 L63 95 Q50 98 37 95 Z" fill="url(#ectoGrad)"/>
+                <!-- Upper arms - thin -->
+                <path d="M24 44 Q18 55 20 75 Q23 78 27 75 Q26 55 30 44 Z" fill="url(#ectoGrad)"/>
+                <path d="M76 44 Q82 55 80 75 Q77 78 73 75 Q74 55 70 44 Z" fill="url(#ectoGrad)"/>
+                <!-- Forearms -->
+                <path d="M20 74 Q17 90 19 105 Q22 107 25 105 Q24 90 27 74 Z" fill="url(#ectoGrad)"/>
+                <path d="M80 74 Q83 90 81 105 Q78 107 75 105 Q76 90 73 74 Z" fill="url(#ectoGrad)"/>
+                <!-- Hands -->
+                <ellipse cx="21" cy="108" rx="4" ry="5" fill="url(#ectoGrad)"/>
+                <ellipse cx="79" cy="108" rx="4" ry="5" fill="url(#ectoGrad)"/>
+                <!-- Hips - narrow -->
+                <path d="M37 93 Q50 97 63 93 L65 112 Q50 116 35 112 Z" fill="url(#ectoGrad)"/>
+                <!-- Left thigh - slim -->
+                <path d="M36 111 Q32 130 33 152 Q37 155 41 152 Q41 130 42 111 Z" fill="url(#ectoGrad)"/>
+                <!-- Right thigh -->
+                <path d="M64 111 Q68 130 67 152 Q63 155 59 152 Q59 130 58 111 Z" fill="url(#ectoGrad)"/>
+                <!-- Left shin -->
+                <path d="M33 151 Q31 170 32 188 Q36 191 39 188 Q39 170 41 151 Z" fill="url(#ectoGrad)"/>
+                <!-- Right shin -->
+                <path d="M67 151 Q69 170 68 188 Q64 191 61 188 Q61 170 59 151 Z" fill="url(#ectoGrad)"/>
+                <!-- Feet -->
+                <ellipse cx="35" cy="191" rx="7" ry="4" fill="url(#ectoGrad)"/>
+                <ellipse cx="65" cy="191" rx="7" ry="4" fill="url(#ectoGrad)"/>
+              </svg>
             </div>
             <h3>Ectomorph</h3>
             <p>Slim, lean, hard to gain weight</p>
           </button>
+
           <button class="body-btn" onclick="selectBody(this,'mesomorph')">
             <div class="body-visual meso">
-              <svg viewBox="0 0 60 120" class="body-svg"><ellipse cx="30" cy="18" rx="13" ry="13" fill="currentColor"/><rect x="16" y="32" width="28" height="48" rx="7" fill="currentColor"/><rect x="6" y="34" width="12" height="40" rx="6" fill="currentColor"/><rect x="42" y="34" width="12" height="40" rx="6" fill="currentColor"/><rect x="18" y="80" width="11" height="38" rx="5" fill="currentColor"/><rect x="31" y="80" width="11" height="38" rx="5" fill="currentColor"/></svg>
+              <!-- MESOMORPH: Athletic V-shape, broad shoulders, muscular -->
+              <svg viewBox="0 0 100 220" class="body-svg" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <linearGradient id="mesoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" style="stop-color:#ff6b2b;stop-opacity:1"/>
+                    <stop offset="100%" style="stop-color:#cc3d00;stop-opacity:1"/>
+                  </linearGradient>
+                </defs>
+                <!-- Head -->
+                <ellipse cx="50" cy="17" rx="14" ry="16" fill="url(#mesoGrad)"/>
+                <!-- Neck - thick -->
+                <rect x="43" y="31" width="14" height="11" rx="4" fill="url(#mesoGrad)"/>
+                <!-- Broad shoulders -->
+                <ellipse cx="24" cy="46" rx="13" ry="9" fill="url(#mesoGrad)"/>
+                <ellipse cx="76" cy="46" rx="13" ry="9" fill="url(#mesoGrad)"/>
+                <!-- Chest - wide top, V-taper to waist -->
+                <path d="M28 40 Q50 37 72 40 L67 92 Q50 96 33 92 Z" fill="url(#mesoGrad)"/>
+                <!-- Chest muscle definition lines -->
+                <path d="M36 52 Q50 56 64 52" stroke="rgba(255,255,255,0.15)" stroke-width="1.5" fill="none"/>
+                <!-- Upper arms - muscular -->
+                <path d="M21 42 Q13 54 15 76 Q19 80 24 77 Q23 55 28 42 Z" fill="url(#mesoGrad)"/>
+                <path d="M79 42 Q87 54 85 76 Q81 80 76 77 Q77 55 72 42 Z" fill="url(#mesoGrad)"/>
+                <!-- Bicep peak -->
+                <ellipse cx="16" cy="62" rx="5" ry="7" fill="url(#mesoGrad)"/>
+                <ellipse cx="84" cy="62" rx="5" ry="7" fill="url(#mesoGrad)"/>
+                <!-- Forearms - thick -->
+                <path d="M15 75 Q12 92 14 107 Q18 110 22 107 Q22 92 24 75 Z" fill="url(#mesoGrad)"/>
+                <path d="M85 75 Q88 92 86 107 Q82 110 78 107 Q78 92 76 75 Z" fill="url(#mesoGrad)"/>
+                <!-- Hands -->
+                <ellipse cx="17" cy="111" rx="5" ry="6" fill="url(#mesoGrad)"/>
+                <ellipse cx="83" cy="111" rx="5" ry="6" fill="url(#mesoGrad)"/>
+                <!-- Hips - moderate -->
+                <path d="M33 90 Q50 95 67 90 L69 114 Q50 119 31 114 Z" fill="url(#mesoGrad)"/>
+                <!-- Ab lines hint -->
+                <path d="M44 68 L44 88 M50 66 L50 88 M56 68 L56 88" stroke="rgba(255,255,255,0.12)" stroke-width="1" fill="none"/>
+                <!-- Left thigh - muscular -->
+                <path d="M32 112 Q27 132 28 155 Q33 159 39 156 Q39 133 42 112 Z" fill="url(#mesoGrad)"/>
+                <!-- Right thigh -->
+                <path d="M68 112 Q73 132 72 155 Q67 159 61 156 Q61 133 58 112 Z" fill="url(#mesoGrad)"/>
+                <!-- Left shin -->
+                <path d="M28 154 Q26 174 28 192 Q32 195 37 192 Q37 174 39 154 Z" fill="url(#mesoGrad)"/>
+                <!-- Right shin -->
+                <path d="M72 154 Q74 174 72 192 Q68 195 63 192 Q63 174 61 154 Z" fill="url(#mesoGrad)"/>
+                <!-- Feet -->
+                <ellipse cx="32" cy="195" rx="8" ry="4" fill="url(#mesoGrad)"/>
+                <ellipse cx="68" cy="195" rx="8" ry="4" fill="url(#mesoGrad)"/>
+              </svg>
             </div>
             <h3>Mesomorph</h3>
             <p>Athletic, muscular build naturally</p>
           </button>
+
           <button class="body-btn" onclick="selectBody(this,'endomorph')">
             <div class="body-visual endo">
-              <svg viewBox="0 0 60 120" class="body-svg"><ellipse cx="30" cy="18" rx="14" ry="14" fill="currentColor"/><ellipse cx="30" cy="58" rx="20" ry="24" fill="currentColor"/><rect x="8" y="36" width="12" height="40" rx="6" fill="currentColor"/><rect x="40" y="36" width="12" height="40" rx="6" fill="currentColor"/><rect x="17" y="80" width="12" height="38" rx="6" fill="currentColor"/><rect x="31" y="80" width="12" height="38" rx="6" fill="currentColor"/></svg>
+              <!-- ENDOMORPH: Wider frame, rounder midsection -->
+              <svg viewBox="0 0 100 220" class="body-svg" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <linearGradient id="endoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" style="stop-color:#f5c518;stop-opacity:1"/>
+                    <stop offset="100%" style="stop-color:#d4a000;stop-opacity:1"/>
+                  </linearGradient>
+                </defs>
+                <!-- Head - rounder -->
+                <ellipse cx="50" cy="17" rx="16" ry="17" fill="url(#endoGrad)"/>
+                <!-- Neck - short, wide -->
+                <rect x="42" y="32" width="16" height="9" rx="4" fill="url(#endoGrad)"/>
+                <!-- Shoulders - wide but rounded -->
+                <ellipse cx="22" cy="47" rx="14" ry="10" fill="url(#endoGrad)"/>
+                <ellipse cx="78" cy="47" rx="14" ry="10" fill="url(#endoGrad)"/>
+                <!-- Torso - wide, rounder belly -->
+                <path d="M26 40 Q50 37 74 40 L78 88 Q70 105 50 108 Q30 105 22 88 Z" fill="url(#endoGrad)"/>
+                <!-- Belly roundness -->
+                <ellipse cx="50" cy="85" rx="22" ry="18" fill="url(#endoGrad)"/>
+                <!-- Upper arms - fuller -->
+                <path d="M20 43 Q11 56 13 78 Q17 83 23 80 Q22 57 26 43 Z" fill="url(#endoGrad)"/>
+                <path d="M80 43 Q89 56 87 78 Q83 83 77 80 Q78 57 74 43 Z" fill="url(#endoGrad)"/>
+                <!-- Forearms -->
+                <path d="M13 77 Q11 94 13 109 Q17 112 21 109 Q21 94 23 77 Z" fill="url(#endoGrad)"/>
+                <path d="M87 77 Q89 94 87 109 Q83 112 79 109 Q79 94 77 77 Z" fill="url(#endoGrad)"/>
+                <!-- Hands -->
+                <ellipse cx="16" cy="113" rx="5" ry="6" fill="url(#endoGrad)"/>
+                <ellipse cx="84" cy="113" rx="5" ry="6" fill="url(#endoGrad)"/>
+                <!-- Hips - wide -->
+                <path d="M22 100 Q50 110 78 100 L80 122 Q50 130 20 122 Z" fill="url(#endoGrad)"/>
+                <!-- Left thigh - fuller -->
+                <path d="M21 120 Q16 140 18 162 Q23 167 30 163 Q30 141 34 120 Z" fill="url(#endoGrad)"/>
+                <!-- Right thigh -->
+                <path d="M79 120 Q84 140 82 162 Q77 167 70 163 Q70 141 66 120 Z" fill="url(#endoGrad)"/>
+                <!-- Left shin -->
+                <path d="M18 161 Q17 180 19 196 Q23 199 28 196 Q29 180 30 161 Z" fill="url(#endoGrad)"/>
+                <!-- Right shin -->
+                <path d="M82 161 Q83 180 81 196 Q77 199 72 196 Q71 180 70 161 Z" fill="url(#endoGrad)"/>
+                <!-- Feet -->
+                <ellipse cx="23" cy="199" rx="9" ry="4" fill="url(#endoGrad)"/>
+                <ellipse cx="77" cy="199" rx="9" ry="4" fill="url(#endoGrad)"/>
+              </svg>
             </div>
             <h3>Endomorph</h3>
             <p>Rounder, gains weight easily</p>
@@ -261,7 +389,7 @@
     </div>
   </section>
 
-  <script src="data.js"></script>
-  <script src="app.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
 </body>
 </html>
